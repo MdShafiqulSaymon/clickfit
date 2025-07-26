@@ -1,0 +1,63 @@
+// 1. Create a new user
+/*
+curl -X POST http://localhost:3000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "type": "member",
+    "active": true
+  }'
+*/
+
+// 2. Get all users
+/*
+curl -X GET http://localhost:3000/api/users
+*/
+
+// 3. Get users with filters
+/*
+curl -X GET "http://localhost:3000/api/users?type=admin&active=true"
+*/
+
+// 4. Get user by ID
+/*
+curl -X GET http://localhost:3000/api/users/1
+*/
+
+// 5. Update user
+/*
+curl -X PUT http://localhost:3000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john.updated@example.com",
+    "password": "newpassword123",
+    "type": "trainer",
+    "active": true
+  }'
+*/
+
+// 6. Delete (deactivate) user
+/*
+curl -X DELETE http://localhost:3000/api/users/1
+*/
+
+// 7. Get users by type
+/*
+curl -X GET http://localhost:3000/api/users/type/trainer
+*/
+
+// 8. Login user
+/*
+curl -X POST http://localhost:3000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john.doe@example.com",
+    "password": "password123"
+  }'
+*/
+
+// 9. Get database statistics
+/*
+curl -X GET http://localhost:3000/api/stats
+*/
